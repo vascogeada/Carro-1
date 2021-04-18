@@ -45,17 +45,20 @@ public class Principal {
 	}
 	
 	private static  boolean testarMeterCombustivelAtestar(Carro carro) {
-		if (carro.meterCombustivel() > 0)
+		if (carro.meterCombustivel() == carro.getCapacidadeDeposito())
 			return true;
 		else 
 			return false;
+		
+		//return (carro.meterCombustivel() == carro.getCapacidadeDeposito());
 	}
 	
 	private static  boolean testarAndar(Carro carro, double distancia) {
 			
-			if (distancia < carro.obterAutonomia()) {
+			if (distancia < carro.obterAutonomia()) 
 				return true;
-			}
+			 else if (distancia == carro.obterAutonomia())
+				return true;
 			else 
 				return false;
 		
